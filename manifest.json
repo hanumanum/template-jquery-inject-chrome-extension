@@ -1,28 +1,32 @@
 {
-  "name": "TODO: change title",
+  "name": "See HTML",
   "version": "0.0.1",
   "manifest_version": 2,
-  "author": "a.kolyan",
-  "description": "TODO: add description",
-  "homepage_url": "http://ablog.gratun.am",
+  "author": "hanumanum",
+  "description": "This is educational extension. 'See HTML' help explore HTML structure directly in web pages",
+  "homepage_url": "http://ablog.gratun.am/seehtml",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "background": {
+    "scripts": [
+      "src/reload.js"
+    ]
+  },
   "default_locale": "en",
   "permissions": [
-    "https://todo.tmp.lab/*"
+    "activeTab"
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://todo.tmp.lab/*"
-      ],
+      "matches": ["http://*/*","https://*/*"],
       "js": [
         "js/jquery/jquery.min.js",
         "src/inject/inject.js"
-      ]
+      ],
+      "css":["src/inject/inject.css"]
     }
   ]
 }

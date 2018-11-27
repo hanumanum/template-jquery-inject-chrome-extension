@@ -5,13 +5,11 @@ chrome.extension.sendMessage({}, function (response) {
 
 			// ----------------------------------------------------------
 			// This part of the script triggers when page is done loading
-			console.log("Hello. This message was sent from scripts/inject.js");
+			console.log("Extension starts");
 			// ----------------------------------------------------------
-			jQuery(document).ready(function () {
-				//TODO: script here
-				console.log("jquery works");
-			});
 
+			console.log($)
 		}
 	}, 10);
 });
+
